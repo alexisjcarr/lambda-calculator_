@@ -1,0 +1,21 @@
+.container {
+  margin: 0 auto;
+  display: border-box;
+  background-color: #ae1e39;
+  width: 500px;
+  align-items: space-between;
+  padding: 30px;
+  //   padding-left: 10px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 5px 5px black;
+
+  .buttonCase {
+    display: flex;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
