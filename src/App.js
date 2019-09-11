@@ -9,23 +9,23 @@ import Operators from "./components/ButtonComponents/OperatorButtons/Operators";
 import Logo from "./components/DisplayComponents/Logo";
 
 const App = () => {
-  const [answer, setAnswer] = useState(11);
+  const [answer, setAnswer] = useState("");
 
   const addNumber = num => {
-    setAnswer(answer => answer + num);
+    setAnswer(answer + num);
   };
 
   const clearDisplay = () => {
-    setAnswer(0);
+    setAnswer("");
   };
 
   const getAnswer = () => {
-    const result = math.evalDependencies(answer);
+    const result = math.evaluate(answer);
     setAnswer(result);
   };
 
   const toggleNegative = () => {
-    setAnswer(answer => 0 - answer);
+    setAnswer(answer => math.evaluate(`0 - ${answer}`));
   };
 
   const toPercent = () => {
@@ -43,11 +43,16 @@ const App = () => {
               clearDisplay={clearDisplay}
               toggleNegative={toggleNegative}
               toPercent={toPercent}
+              answer={answer}
             />
-            <Numbers />
+            <Numbers addNumber={addNumber} />
           </div>
           <div className="right">
-            <Operators getAnswer={getAnswer} />
+            <Operators
+              addNumber={addNumber}
+              getAnswer={getAnswer}
+              answer={answer}
+            />
           </div>
         </div>
       </div>

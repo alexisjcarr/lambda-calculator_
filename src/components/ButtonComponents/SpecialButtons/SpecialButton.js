@@ -18,7 +18,8 @@ const SpecialButton = ({
   special,
   clearDisplay,
   toggleNegative,
-  toPercent
+  toPercent,
+  answer
 }) => {
   const whichSpec = special => {
     switch (special) {
@@ -27,11 +28,12 @@ const SpecialButton = ({
       case "+/-":
         return toggleNegative();
       case "%":
-        return toPercent();
+        return toPercent(answer);
       default:
         return;
     }
   };
+
   return (
     <>
       <button onClick={() => whichSpec(special)} style={buttonStyles}>

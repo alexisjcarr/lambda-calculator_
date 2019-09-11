@@ -15,10 +15,29 @@ const buttonStyles = {
   fontSize: "40px"
 };
 
-const OperatorButton = ({ operator }) => {
+const OperatorButton = ({ operator, addNumber, getAnswer, value }) => {
+  const whichOp = value => {
+    switch (value) {
+      case "/":
+        return addNumber(value);
+      case "*":
+        return addNumber(value);
+      case "-":
+        return addNumber(value);
+      case "+":
+        return addNumber(value);
+      case "=":
+        return getAnswer();
+      default:
+        return;
+    }
+  };
+
   return (
     <>
-      <button style={buttonStyles}>{operator}</button>
+      <button onClick={() => whichOp(value)} style={buttonStyles}>
+        {operator}
+      </button>
     </>
   );
 };

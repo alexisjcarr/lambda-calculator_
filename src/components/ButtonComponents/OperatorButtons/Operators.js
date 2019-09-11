@@ -10,7 +10,7 @@ const styles = {
   margin: "10px"
 };
 
-const Operators = () => {
+const Operators = ({ addNumber, getAnswer }) => {
   const [operatorState] = useState(operators);
   return (
     <div style={styles}>
@@ -19,6 +19,8 @@ const Operators = () => {
           key={operator.value}
           operator={operator.char}
           value={operator.value}
+          addNumber={addNumber}
+          getAnswer={getAnswer}
         />
       ))}
     </div>
