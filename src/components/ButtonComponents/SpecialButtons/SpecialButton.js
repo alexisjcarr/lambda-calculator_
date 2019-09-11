@@ -14,11 +14,10 @@ const buttonStyles = {
   fontSize: "40px"
 };
 
-const SpecialButton = ({ special }) => {
+const SpecialButton = ({ special, clearDisplay }) => {
   return (
     <>
-      {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button style={buttonStyles}>{special}</button>
+      <button onClick={() => special === "C" && clearDisplay()} style={buttonStyles}>{special}</button>
     </>
   );
 };

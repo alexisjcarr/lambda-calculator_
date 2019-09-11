@@ -15,10 +15,10 @@ const styles = {
   border: "1px solid white"
 };
 
-const Display = () => {
+const Display = ({ answer }) => {
   return (
     <div style={styles}>
-      <h1 style={{ color: "white", fontSize: "60px" }}>0</h1>
+      <h1 style={{ color: "white", fontSize: "60px" }}>{answer}</h1>
     </div>
   );
 };

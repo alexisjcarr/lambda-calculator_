@@ -25,7 +25,6 @@ const zeroStyles = {
 const NumberButton = ({ number }) => {
   return (
     <>
-      {/* Display a button element rendering the data being passed down from the parent container on props */}
       <button style={number !== "0" ? buttonStyles : zeroStyles}>
         {number}
       </button>
