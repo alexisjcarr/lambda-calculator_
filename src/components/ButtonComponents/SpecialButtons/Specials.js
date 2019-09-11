@@ -10,7 +10,7 @@ const styles = {
   padding: "10px"
 };
 
-const Specials = ({ clearDisplay, toggleNegative, toPercent }) => {
+const Specials = ({ clearDisplay, toggleNegative, toPercent, answer }) => {
   const [specialsState] = useState(specials);
 
   return (
@@ -22,6 +22,7 @@ const Specials = ({ clearDisplay, toggleNegative, toPercent }) => {
           clearDisplay={clearDisplay}
           toggleNegative={toggleNegative}
           toPercent={toPercent}
+          answer={answer}
         />
       ))}
     </div>

@@ -22,10 +22,13 @@ const zeroStyles = {
   fontSize: "40px"
 };
 
-const NumberButton = ({ number }) => {
+const NumberButton = ({ number, addNumber }) => {
   return (
     <>
-      <button style={number !== "0" ? buttonStyles : zeroStyles}>
+      <button
+        onClick={() => addNumber(number)}
+        style={number !== "0" ? buttonStyles : zeroStyles}
+      >
         {number}
       </button>
     </>

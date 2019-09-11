@@ -10,12 +10,12 @@ const styles = {
   margin: "10px"
 };
 
-const Numbers = () => {
+const Numbers = ({ addNumber }) => {
   const [numbersState] = useState(numbers);
   return (
     <div style={styles}>
       {numbersState.map(number => (
-        <NumberButton key={number} number={number} />
+        <NumberButton key={number} number={number} addNumber={addNumber} />
       ))}
     </div>
   );
