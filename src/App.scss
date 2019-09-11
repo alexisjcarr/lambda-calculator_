@@ -10,6 +10,16 @@
   border: 1px solid black;
   box-shadow: 5px 5px black;
 
+  @media screen and (max-width: 500px) {
+    width: 80%;
+    align-items: space-between;
+    padding: 6%;
+    //   padding-left: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    box-shadow: 5px 5px black;
+  }
+
   .buttonCase {
     display: flex;
 

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../App.scss";
+
 const styles = {
   backgroundColor: "#30333A",
   display: "flex",
