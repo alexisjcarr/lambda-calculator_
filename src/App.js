@@ -24,6 +24,14 @@ const App = () => {
     setAnswer(result);
   };
 
+  const toggleNegative = () => {
+    setAnswer(answer => 0 - answer);
+  };
+
+  const toPercent = () => {
+    setAnswer(answer => answer / 100);
+  };
+
   return (
     <div className="container">
       <Logo />
@@ -31,7 +39,11 @@ const App = () => {
         <Display answer={answer} />
         <div className="buttonCase">
           <div className="left">
-            <Specials clearDisplay={clearDisplay} />
+            <Specials
+              clearDisplay={clearDisplay}
+              toggleNegative={toggleNegative}
+              toPercent={toPercent}
+            />
             <Numbers />
           </div>
           <div className="right">

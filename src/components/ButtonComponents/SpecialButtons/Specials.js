@@ -10,13 +10,19 @@ const styles = {
   padding: "10px"
 };
 
-const Specials = ({ clearDisplay }) => {
+const Specials = ({ clearDisplay, toggleNegative, toPercent }) => {
   const [specialsState] = useState(specials);
 
   return (
     <div style={styles}>
       {specialsState.map(spec => (
-        <SpecialButton key={spec} special={spec} clearDisplay={clearDisplay} />
+        <SpecialButton
+          key={spec}
+          special={spec}
+          clearDisplay={clearDisplay}
+          toggleNegative={toggleNegative}
+          toPercent={toPercent}
+        />
       ))}
     </div>
   );

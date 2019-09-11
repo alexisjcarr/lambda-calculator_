@@ -14,10 +14,29 @@ const buttonStyles = {
   fontSize: "40px"
 };
 
-const SpecialButton = ({ special, clearDisplay }) => {
+const SpecialButton = ({
+  special,
+  clearDisplay,
+  toggleNegative,
+  toPercent
+}) => {
+  const whichSpec = special => {
+    switch (special) {
+      case "C":
+        return clearDisplay();
+      case "+/-":
+        return toggleNegative();
+      case "%":
+        return toPercent();
+      default:
+        return;
+    }
+  };
   return (
     <>
-      <button onClick={() => special === "C" && clearDisplay()} style={buttonStyles}>{special}</button>
+      <button onClick={() => whichSpec(special)} style={buttonStyles}>
+        {special}
+      </button>
     </>
   );
 };
